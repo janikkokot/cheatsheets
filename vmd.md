@@ -1,61 +1,71 @@
-loading molecules
-=================
+# Visual Molecular Dynamics Tcl Cheatsheet
+## loading molecules
 
-```bash
-vmd> mol new <file>
-vmd> mol addfile <file> [..files] first 1 last -1 step 10
+```python
+> mol new <file>
+> mol addfile <file> [..files] first 1 last -1 step 10
 ```
 
-representation
-==============
-add representation
-------------------
-```bash
-vmd> mol addrep <molid>
-vmd> mol addrep 0
+## representation
+### add representation
+```python
+> mol addrep <molid>
 ```
-change selection
-----------------
-```bash
-vmd> mol modselect <repid> <molid> <selection>
-vmd> mol modselect 0 0 water
-vmd> mol modselect 0 0 water within 5 of protein
+e.g.
+```python
+> mol addrep 0
 ```
-update selection
-----------------
-```bash
-vmd> mol selupdate <repid> <molid> [0|1|off|on|false|true]
-vmd> mol selupdate 0 0 true
+### change selection
+```python
+> mol modselect <repid> <molid> <selection>
 ```
-
-show/hide representation
-------------------------
-```bash
-vmd> mol showrep <repid> <molid> [0|1|off|on|false|true]
-vmd> mol showrep 0 0 false
+e.g.
+```python
+> mol modselect 0 0 water
+> mol modselect 0 0 water within 5 of protein
+```
+### update selection
+```python
+> mol selupdate <repid> <molid> [0|1|off|on|false|true]
+```
+e.g.
+```python
+> mol selupdate 0 0 true
 ```
 
-smoothing window
-----------------
-```bash
-vmd> mol smoothrep <repid> <molid> <smoothing>
-vmd> mol smoothrep 0 0 2
+### show/hide representation
+```python
+> mol showrep <repid> <molid> [0|1|off|on|false|true]
+```
+e.g.
+```python
+> mol showrep 0 0 false
 ```
 
-change drawing style
---------------------
-
-```bash
-vmd> mol modstyle <repid> <molid> <style>
-vmd> mol modstyle 0 0 NewCartoon
-vmd> mol modstyle 0 0 Solvent
+### smoothing window
+```python
+> mol smoothrep <repid> <molid> <smoothing>
+```
+e.g.
+```python
+> mol smoothrep 0 0 2
 ```
 
-animation
-=========
+### change drawing style
 
-```bash
-vmd> animate forward
-vmd> animate pause
-vmd> animate speed 0.00-1.00
+```python 
+> mol modstyle <repid> <molid> <style>
+```
+e.g.
+```python
+> mol modstyle 0 0 NewCartoon
+> mol modstyle 0 0 Solvent
+```
+
+## animation
+
+```python
+> animate forward
+> animate pause
+> animate speed 0.00-1.00
 ```
